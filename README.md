@@ -1,6 +1,6 @@
 <div align="center">
 
-# Sales_Project
+# Sales Project
 
 <p align="center">Sales Project</p>
 
