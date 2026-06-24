@@ -1,0 +1,11 @@
+{% extends 'master/base.html' %}
+
+{% block body %}
+  <title>WELCOME</title>
+  <h1>Welcome {{ request.user.full_name }}</h1>
+  <a href="{% url 'sale_list' %}" class="btn btn-warning">Please Visit Sale List</a>
+
+  <div class="mt-3">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae iure ipsum exercitationem nostrum, cumque unde quos deserunt minus facere non hic iusto aliquam libero laudantium maiores tempore est, illo amet ab. Delectus veniam quia perspiciatis. Voluptatem eos itaque id fuga. Tempore reiciendis ab fugit cum aliquid minima dignissimos, ut, quae, esse placeat enim cupiditate ratione laudantium inventore magnam mollitia id modi porro explicabo alias nam odit fuga beatae. Vitae voluptatum asperiores ullam voluptatem libero totam. Itaque, nulla sapiente ipsam aliquam illum quam earum repellendus, reiciendis consequatur nostrum sequi ab, incidunt dolor sit. Nostrum iste nam aliquam in voluptates delectus? Voluptas!</p>
+  </div>
+{% endblock %}

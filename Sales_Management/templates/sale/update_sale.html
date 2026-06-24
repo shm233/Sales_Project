@@ -1,0 +1,48 @@
+{% extends 'master/base.html' %}
+
+{% block body %}
+  <title>Update | Sale</title>
+  <h1>Please Update Necessary Information for {{sale_data.product_name}}</h1>
+  <div class="mt-3">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Product Name</label>
+        <input name="product_name" value="{{sale_data.product_name}}" type="text" class="form-control" id="exampleInputPassword1" placeholder="Product Name" required />
+      </div>
+      <div class="mb-3">
+        <div class="mb-3">
+          <select name="category" class="form-select" aria-label="Default select example">
+            
+            {% for c in cate %}
+              <option value="{{ c.id }}" 
+              {% if sale_data.category.id == c.id  %}
+                selected
+              {% endif %}
+                >{{ c.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Unit Price</label>
+        <input name="unit_price" value="{{sale_data.unit_price}}" type="number" class="form-control" id="exampleInputPassword1" placeholder="Prodive per piece price" required />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Quantity</label>
+        <input name="quantity" value="{{sale_data.quantity}}" type="number" class="form-control" id="exampleInputPassword1" placeholder="Provide Quantity in Number" required />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Discount Percentage</label>
+        <input name="discount_percent" value="{{sale_data.discount_percent}}" type="number" class="form-control" id="exampleInputPassword1" placeholder="Provide Percentage Number" />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Tax Percentage</label>
+        <input name="tax_percent" value="{{sale_data.tax_percent}}" type="number" class="form-control" id="exampleInputPassword1" placeholder="Provide Percentage Number" />
+      </div>
+      <button type="submit" class="btn btn-primary">Add Sale</button>
+    </form>
+    <label for="">Don't Want to Update?</label>
+    <a href="{% url 'sale_list' %}" class="btn btn-danger">Go To List</a>
+  </div>
+{% endblock %}
